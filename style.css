@@ -1,0 +1,103 @@
+/* ---------- Basics ---------- */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #eef2f7;
+  color: #1f2937;
+}
+
+/* Centered main container */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 48px;
+}
+
+h1 { margin-bottom: 4px; color: #1e3a8a; }
+h2 { margin-top: 0; font-size: 1.15rem; }
+.subtitle { margin-top: 0; color: #4b5563; }
+
+/* White cards */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 18px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Form ---------- */
+label { display: block; margin: 12px 0 4px; font-weight: 600; }
+
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #9ca3af;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.btn {
+  margin-top: 16px;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: #2563eb;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn:hover { background: #1d4ed8; }
+
+select:focus-visible, .btn:focus-visible, input:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+.error { color: #b91c1c; min-height: 1.2em; margin: 10px 0 0; }
+
+/* ---------- Dashboard ---------- */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  text-align: center;
+}
+.stat { background: #f3f4f6; border-radius: 8px; padding: 12px 6px; }
+.stat span { display: block; font-size: 1.6rem; font-weight: 700; color: #1e3a8a; }
+.stat small { color: #4b5563; }
+
+.bar { height: 16px; background: #e5e7eb; border-radius: 8px; margin-top: 16px; overflow: hidden; }
+.bar-fill { height: 100%; width: 0%; background: #16a34a; transition: width 0.3s; }
+
+/* ---------- Task list ---------- */
+.tasks { list-style: none; margin: 0; padding: 0; }
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  margin-bottom: 8px;
+  border: 1px solid #d1d5db;
+  border-left: 5px solid #f59e0b;      /* orange edge = pending */
+  border-radius: 6px;
+}
+.task input { width: 20px; height: 20px; cursor: pointer; }
+.task .name { flex: 1; margin: 0; font-weight: 400; cursor: pointer; }
+.task .status { font-size: 0.85rem; font-weight: 600; color: #b45309; }
+
+/* Applied by JavaScript when the checkbox is ticked */
+.task.done { border-left-color: #16a34a; background: #f0fdf4; }
+.task.done .name { text-decoration: line-through; color: #6b7280; }
+.task.done .status { color: #15803d; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 520px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}

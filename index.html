@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding Checklist Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Onboarding Checklist Generator</h1>
+    <p class="subtitle">Choose your role and department to get your personal checklist.</p>
+
+    <!-- FEATURE 1: Role / Department selection -->
+    <section class="card">
+      <h2>Select Role and Department</h2>
+      <form id="selectForm">
+        <label for="role">Role</label>
+        <select id="role">
+          <option value="">-- Select role --</option>
+          <option>Developer</option>
+          <option>Designer</option>
+          <option>Tester</option>
+          <option>HR</option>
+          <option>Marketing</option>
+        </select>
+
+        <label for="department">Department</label>
+        <select id="department">
+          <option value="">-- Select department --</option>
+          <option>IT</option>
+          <option>HR</option>
+          <option>Finance</option>
+          <option>Marketing</option>
+        </select>
+
+        <p id="message" class="error" role="alert"></p>
+        <button type="submit" class="btn">Generate Checklist</button>
+      </form>
+    </section>
+
+    <!-- Hidden until a checklist is generated -->
+    <div id="results" hidden>
+      <!-- FEATURE 4: Progress dashboard -->
+      <section class="card">
+        <h2>Progress Dashboard</h2>
+        <div class="stats">
+          <div class="stat"><span id="totalCount">0</span><small>Total Tasks</small></div>
+          <div class="stat"><span id="doneCount">0</span><small>Completed</small></div>
+          <div class="stat"><span id="remainingCount">0</span><small>Remaining</small></div>
+          <div class="stat"><span id="percent">0%</span><small>Progress</small></div>
+        </div>
+        <div class="bar"><div id="barFill" class="bar-fill"></div></div>
+      </section>
+
+      <!-- FEATURE 3: Task list -->
+      <section class="card">
+        <h2 id="listTitle">Your Tasks</h2>
+        <ul id="taskList" class="tasks"></ul>
+      </section>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

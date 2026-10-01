@@ -1,0 +1,12 @@
+{
+  "name": "onboarding-checklist",
+  "version": "1.0.0",
+  "description": "Automated Onboarding Checklist Generator (Problem 7, Feature Set C)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
